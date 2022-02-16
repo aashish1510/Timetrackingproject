@@ -24,9 +24,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true }))
 
 //database
- mongoose.connect('mongodb://localhost:3000/timetracking',function(err){
+ mongoose.connect('mongodb://localhost:27017/timetracking',function(err){
     if(err){
-    console.log("date not connected");
+    console.log("data not connected");
 
     }
     else{
