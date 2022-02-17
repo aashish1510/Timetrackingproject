@@ -43,7 +43,10 @@ app.get("/",function(req,res){
 app.get("/login",sessioncontroller.login)
 app.get("/signup",sessioncontroller.signup)
 app.post("/saveuser",sessioncontroller.saveuser)
-app.post("/addRole",roleController.addRole)
+app.post("/roles",roleController.addRole)
+app.get("/roles",roleController.getAllRoles)
+app.delete("/roles/:roleId",roleController.deleteRole)
+app.put("/roles",roleController.updateRole)
 
 app.listen(3000,function(){
     console.log("welcome to the server");
