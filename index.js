@@ -17,7 +17,9 @@
 const express =require("express")
 const mongoose =require("mongoose")
 const sessioncontroller =require("./controller/session-controller")
-const roleController =require("./controller/role")
+const roleController =require("./controller/role-controller")
+const usercontroller =require("./controller/user-controller")
+const RoleModel = require("./model/role-model")
 const app = express()
 //middleware
 app.use(express.json())
@@ -47,6 +49,13 @@ app.post("/roles",roleController.addRole)
 app.get("/roles",roleController.getAllRoles)
 app.delete("/roles/:roleId",roleController.deleteRole)
 app.put("/roles",roleController.updateRole)
+
+
+
+app.post("/user",usercontroller.adduser)
+app.get("/user",usercontroller.getAlluser)
+app.delete("/user/:userid",usercontroller.deleteUser)
+app.put("/user",usercontroller.updateuser)
 
 app.listen(3000,function(){
     console.log("welcome to the server");
