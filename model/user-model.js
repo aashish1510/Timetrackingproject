@@ -1,4 +1,6 @@
 const mongoose = require("mongoose")
+
+//Schema
  let userSchema = new mongoose.Schema({
      firstname:{
          type:String,
@@ -19,5 +21,7 @@ const mongoose = require("mongoose")
          ref:"role"
      }
  })
+
+ //model
  let UserModel= mongoose.model("user",userSchema)
  module.exports= UserModel

@@ -52,4 +52,24 @@ module.exports.getTeam = function(req,res){
 
     })
 }
+module.exports.deleteTeam = function(req,res){
+    let projectteamid= req.params.projectteamid
+
+
+    ProjectTeamModel.deleteOne({"_id":projectteamid},function(err,data){
+        if(err){
+            res.json({
+                msg:"project team not deleted",
+                statu:-1,
+                data:err
+            })
+        }else{
+            res.json({
+                msg:"project team  deleted",
+                status:200,
+                data:data
+            })
+        }
+    })
+}
 
